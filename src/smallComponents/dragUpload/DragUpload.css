@@ -1,0 +1,15 @@
+.heading {
+  color: #333;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.subHeader {
+  color: gray;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 10px;
+}

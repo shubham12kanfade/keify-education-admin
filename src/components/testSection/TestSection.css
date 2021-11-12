@@ -1,0 +1,143 @@
+/* body {
+  width: 100%;
+  height: 100vh;
+  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+  align-item: center;
+} */
+.testright {
+  /* margin-left: 35%; */
+  width: 70%;
+  background-color: rgba(255, 255, 255);
+  border-left: 1px solid grey;
+  /* box-shadow: 0px 0px 10px #888888; */
+  height: 100vh;
+  float: right;
+}
+.main-div {
+  padding-top: 1rem;
+}
+.close-icon-right {
+  font-size: 1.3rem;
+  margin-top: 0.4rem;
+  cursor: pointer;
+}
+h1 {
+  text-align: center;
+  font-family: "sans-serif";
+  text-transform: capitalized;
+  font-size: 32px;
+}
+.main-heading {
+  justify-content: space-between;
+  display: flex;
+  background-color: #f4f0ec;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  /* margin-bottom: 0.5rem; */
+  height: 2.5rem;
+  border-radius: 3px;
+}
+.pencil-icon-left {
+  margin-left: 2rem;
+  cursor: pointer;
+  color: green;
+}
+.right-clock-icon {
+  color: green;
+  cursor: pointer;
+}
+.right-del-icon {
+  color: red;
+  cursor: pointer;
+}
+.left-part-test {
+  justify-content: space-between;
+  display: flex;
+}
+.open-btn-left {
+  font-size: 1.5rem;
+  margin-top: -1rem;
+}
+.main-heading h3 {
+  width: 30%;
+}
+.main-heading p {
+  cursor: pointer;
+  border-radius: 50%;
+  bakground: #fff;
+  padding: 15px;
+}
+.dropdown-text-test {
+  padding: 1rem;
+}
+.answers_test {
+  /* padding: 30px 20px 40px 20px; */
+  font-family: "sans-serif";
+  font-size: 15px;
+  word-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.7;
+  bakground: #fcf5f5;
+  color: rgb(40, 37, 53);
+}
+.icons-dropdown {
+  margin-top: 1rem;
+}
+.right-clock-icon,
+.right-add-icon {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.drop-clock-icon,
+.drop-pencil-icon {
+  margin-right: 1rem;
+  color: green;
+  cursor: pointer;
+}
+.drop-del-icon {
+  margin-right: 1rem;
+  color: red;
+  cursor: pointer;
+}
+.upload-btn {
+  background: #8a2be2;
+  color: #fff;
+  vertical-align: center;
+  font-weight: 700;
+  width: 5rem;
+  padding: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.addquestion-bottom {
+  background-color: #fff;
+  color: black;
+  width: 100%;
+  height: 3rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  font-size: 16px;
+}
+@media screen and (max-width: 992px) {
+  .upload-btn {
+    height: 0.7rem;
+    margin-right: 10px;
+    width: 5rem;
+    font-size: 10px;
+  }
+  .testright {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .upload-btn {
+    margin-right: 10px;
+    width: 5rem;
+    font-size: 10px;
+  }
+}

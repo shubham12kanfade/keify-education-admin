@@ -1,0 +1,31 @@
+/* .input {
+  color: #333;
+  font-size: 20px;
+  padding-left: 10px;
+  margin-right: 10px;
+  height: 30px;
+  background-color: transparent;
+  outline: none;
+  outline-width: 0;
+  border: 1.5px solid lightgray;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+} */
+
+.heading {
+  color: #333;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 20px 10px 10px 20px;
+  text-align: left;
+  width: 50%;
+}
+
+.footer {
+  color: gray;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 10px 10px;
+  text-align: left;
+  width: 50%;
+}

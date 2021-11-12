@@ -1,0 +1,39 @@
+.test-filter {
+  width: 30%;
+  height: 100vh;
+  margin-left: 70%;
+  box-shadow: 0px 0px 10px #888888;
+}
+.head {
+  justify-content: space-between;
+  display: flex;
+  padding: 1.5rem;
+  border-bottom: 1.5px solid grey;
+}
+.price-fields {
+  padding: 1.8rem;
+  width: 80%;
+  position: relative;
+}
+.price-fields h3 {
+  color: #00008b;
+  margin-bottom: 0.97rem;
+}
+.branch-field {
+  padding: 1.8rem;
+}
+.branch-field h3 {
+  color: #00008b;
+  margin-bottom: 0.97rem;
+}
+.branch-field input {
+  width: 95%;
+  padding: 7px;
+}
+#range {
+  width: 100%;
+}
+.pricerange {
+  display: flex;
+  justify-content: space-between;
+}

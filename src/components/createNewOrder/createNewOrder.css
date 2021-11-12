@@ -1,0 +1,65 @@
+.navbar {
+}
+
+.bars {
+  /* margin-right: -90px; */
+  color: black;
+}
+
+.nav-menu {
+  background-color: white;
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  right: -100%;
+  transition: 850ms;
+}
+
+.nav-menu > * {
+  flex: 1 100%;
+}
+
+.nav-menu.active {
+  right: 0;
+  transition: 350ms;
+}
+
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 50px;
+  left: 0px;
+  width: 78vw;
+  border-top: 1px solid gray;
+}
+
+.input__sm__div {
+  display: flex;
+  margin-bottom: 45px;
+  width: 100%;
+}
+
+.botton__group {
+  display: flex;
+  margin-left: 900px;
+}
+
+@media only screen and (max-width: 855px) {
+  .header {
+  }
+  .input {
+  }
+  .input__heading {
+  }
+  .input__sm__div {
+  }
+  .input__sm {
+  }
+}

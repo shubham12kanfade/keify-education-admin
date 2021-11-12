@@ -1,0 +1,21 @@
+.heading {
+  color: #333;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 20px 10px 10px 20px;
+  text-align: left;
+  width: 50%;
+}
+
+.editor {
+  color: #333;
+  margin-left: 10px;
+  width: 98%;
+  font-size: 20px;
+  background-color: transparent;
+  outline: none;
+  outline-width: 0;
+  border: 1.5px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+}
