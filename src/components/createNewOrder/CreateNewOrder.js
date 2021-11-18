@@ -31,7 +31,7 @@ function CreateNewOrder() {
 
   return (
     <>
-      <div style={{ color: '#fff', zIndex: '2' }}>
+      <div style={{ color: '#fff' }}>
         <div className='bars' onClick={showSidebar}>
           <Button text = 'Add' />
         </div>

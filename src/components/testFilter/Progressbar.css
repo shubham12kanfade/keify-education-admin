@@ -1,0 +1,105 @@
+.testsection {
+    width: 30%;
+    height: auto;
+    margin-left: 70%;
+    /* vertical-align: 1px solid grey; */
+    /* box-shadow: 0px 0px 10px #888888; */
+  }
+  .line{
+   border-left:"2px solid black";
+   height: 100vh;
+  }
+  .accordion{
+      margin-top: 1.5rem;
+      margin-left: 1.2rem;
+  }
+  .accordion-range{
+      width: 50px;
+  }
+  .slider{
+      position: relative;
+  }
+  .range-slider{
+      -webkit-appearance: none;
+      appearance: none;
+      width: 91%;
+      height:6px;
+      outline: none;
+      margin-left: 1rem;
+      margin-top: 1rem;
+      background-color:rgb(137, 203, 241) ;
+  }
+  .range-slider::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      background: rgb(79, 172, 235);
+      border-radius: 50%;
+  }
+  .range-slider::-webkit-slider-thumb:hover{
+      box-shadow: 0 0 0 10px rgba(225, 225, 225, 0.2);
+  }
+  .range-slider::-webkit-slider-thumb:active{
+    box-shadow: 0 0 0 10px rgba(225, 225, 225, 0.2);
+  }
+  .label{
+      color: #fff;
+      font-size: 30px;
+  }
+  .label-right{
+      float: right;
+      margin-right: 1.1rem;
+  }
+  .label-left{
+      float: left;
+      margin-left: 1.1rem;
+  }
+  .branches{
+      margin-left: 1.2rem;
+  }
+  /* .inputprogress{
+      width: 100%;
+  } */
+  .inputtag{
+      width: 90%;
+      height: 30px;
+      margin-left: 1rem;
+      margin-top: 1rem;
+  }
+  /* .section-head h3 {
+    width: 85%;
+    margin-top: 0.5rem;
+  } */
+  .close-icon {
+    font-size: 1rem;
+  }
+  .section-head {
+    justify-content: space-between;
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1.5px solid grey;
+  }
+  @media screen and (max-width: 992px) {
+    .inputtag{
+      width: 75%;
+      height: 10px;
+      margin-left: 1rem;
+      margin-top: 1rem;
+  }
+  .range-slider{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%;
+    height:6px;
+    outline: none;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    background-color:rgb(137, 203, 241) ;
+}
+.close-icon {
+  font-size: 0.7rem;
+}
+  }
+  
+  

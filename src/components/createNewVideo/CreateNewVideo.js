@@ -15,13 +15,46 @@ import Header from '../../smallComponents/header/Header';
 import Input from '../../smallComponents/input/Input';
 import TextEditor from '../../smallComponents/editor/TextEditor';
 import Toggle from '../../smallComponents/toggle/Toggle';
+import Axios from 'axios';
 
 function CreateNewVideo() {
   const [sidebar, setSidebar] = useState(false);
+  const [text, setText] = useState("");
 
   const showSidebar = () => setSidebar(!sidebar);
 
-  const [text, setText] = useState("");
+  const url = 'http://3.6.132.160:4000/api/v1/video/add';
+  const [data, setData] = useState({
+    image: '',
+    previewVideo: '',
+    name: '',
+    shortDesc: '',
+    longDesc: '',
+    attchFile: [],
+  })
+
+  const submit = (e) => {
+    e.preventDefault();
+    Axios
+      .post(url, {
+        image: data.image,
+        previewVideo: data.previewVideo,
+        name: data.name,
+        shortDesc: data.shortDesc,
+        longDesc: data.longDesc,
+        attchFile: data.attchFile,
+      })
+      .then(res => {
+        console.log('api post data >>>', res.data);
+      })
+  }
+
+  const handleEvent = (e) => {
+    const newData = {...data};
+    newData[e.target.id] = e.target.value;
+    setData(newData);
+    console.log('data', newData)
+  }
 
   return ( 
     <>
@@ -39,78 +72,144 @@ function CreateNewVideo() {
                 <AiOutlineClose style = {{color: '#333'}} onClick={showSidebar} />
               </div>
             </li>
-            <div className = 'mainDiv'>
+            <form 
+              className = 'mainDiv'
+              onSubmit = {(e) => submit(e)}
+            >
               <div style = {{display: 'flex'}}>
-                <DragUpload 
-                  width = '25vw' 
-                  text = 'Images' 
-                  subtext = '*Select only jpeg, jpg, png, webp files' 
-                />
-                <DragUpload 
-                  width = '25vw' 
-                  text = 'Preview Video' 
-                  subtext = '*Select only mp4, 3gp, avi, mov, webm, mkv files' 
-                />
-                <DragUpload 
-                  width = '25vw' 
-                  text = 'Video' 
-                  subtext = '*Select only mp4 files' 
-                />
+                <span 
+                >
+                  <DragUpload id = "image"
+                  onChange = {(e) => handleEvent(e)}
+                  value = {data.image}
+                    width = '23vw' 
+                    text = 'Images' 
+                    subtext = '*Select only jpeg, jpg, png, webp files' 
+                  />
+                </span>
+
+                <span id = "previewVideo"
+                  onChange = {(e) => handleEvent(e)}
+                  value = {data.previewVideo}
+                >
+                  <DragUpload 
+                    width = '23vw' 
+                    text = 'Preview Video' 
+                    subtext = '*Select only mp4, 3gp, avi, mov, webm, mkv files' 
+                  />
+                </span>
+
+                <span id = "previewVideo"
+                  onChange = {(e) => handleEvent(e)}
+                  value = {data.previewVideo}
+                >
+                  <DragUpload 
+                    width = '23vw' 
+                    text = 'Video' 
+                    subtext = '*Select only mp4 files' 
+                  />
+                </span>
+
               </div>
 
               <div style = {{display: 'flex'}}>
-                <Input 
-                  type = {'name'} 
-                  placeholder = {'Enter a name'} 
-                  width = {'90%'} 
-                  header = {'Name*'}
-                />
+                <span 
+                  style = {{
+                    width: '90%' }}
+                >
+                  {/* <Input 
+                    type = {'name'} 
+                    placeholder = {'Enter a name'} 
+                    width = {'90%'} 
+                    header = {'Name*'}
+                  /> */}
+                  <h3 className = "heading">'Enter a name'</h3>
+                  <input 
+                    // className = 'input' 
+                    id = "name"
+                    onChange = {(e) => handleEvent(e)}
+                    value = {data.name}
+                    type = 'name'
+                    placeholder = 'name'
+                    style = {{
+                      width: '90%',
+                      color: '#333',
+                      marginLeft: '10px',
+                      fontSize: '20px',
+                      paddingLeft: '10px',
+                      height: '50px',
+                      backgroundColor: 'transparent',
+                      outline: 'none',
+                      outlineWidth: '0',
+                      border: '1.5px solid lightgray',
+                      borderRadius : '5px',
+                      boxShadow: '3px 3px 10px 6px rgba(0, 0, 0, 0.06)',
+                    }}
+                  />
+                  <p className = 'footer'></p>
+                </span>
                 <span style = {{position: 'relative', top: '40px', right: '70px'}}>
                   <Toggle header = {'Free Video?'} size = {'40px'} color = {'gray'} />
                 </span>
               </div>
 
-              <h3 style = {{
-                color: '#333',
-                fontSize: '17px',
-                fontWeight: 'bold',
-                margin: '20px 10px 10px 10px',
-                textAlign: 'left',
-                width: '50%',
-                }}
+              <span id = "shortDesc"
+                onChange = {(e) => handleEvent(e)}
+                value = {data.shortDesc}
               >
-                Short Description*
-              </h3>
-              <textarea 
-                type = "description" 
-                placeholder = " Enter a short Description" 
-                rows="5" 
-                cols="50" 
-                style = {{
+                <h3 style = {{
                   color: '#333',
-                  fontSize: '20px',
-                  paddingLeft: '3px',
-                  width : '98%',
-                  height: '60px',
-                  marginLeft: '10px',
-                  backgroundColor: 'transparent',
-                  outline: 'none',
-                  outlineWidth: '0',
-                  border: '1px solid lightgray',
-                  borderRadius: '5px',
-                  boxShadow: '3px 3px 10px 6px rgba(0, 0, 0, 0.06)',
-                }} 
-              />
+                  fontSize: '17px',
+                  fontWeight: 'bold',
+                  margin: '20px 10px 10px 10px',
+                  textAlign: 'left',
+                  width: '50%',
+                  }}
+                >
+                  Short Description*
+                </h3>
+                <textarea 
+                  type = "description" 
+                  placeholder = " Enter a short Description" 
+                  rows="5" 
+                  cols="50" 
+                  style = {{
+                    color: '#333',
+                    fontSize: '20px',
+                    paddingLeft: '3px',
+                    width : '98%',
+                    height: '60px',
+                    marginLeft: '10px',
+                    backgroundColor: 'transparent',
+                    outline: 'none',
+                    outlineWidth: '0',
+                    border: '1px solid lightgray',
+                    borderRadius: '5px',
+                    boxShadow: '3px 3px 10px 6px rgba(0, 0, 0, 0.06)',
+                  }} 
+                />
+              </span>
 
-              <TextEditor heading = {'Long Description*'} />
+              <span id = "longDesc"
+                onChange = {(e) => handleEvent(e)}
+                value = {data.longDesc}
+              >
+                <TextEditor heading = {'Long Description*'} />
+              </span>
 
-              <DragUpload width = '77vw' text = 'Attach Files' />
+              <span id = "attchFile"
+                onChange = {(e) => handleEvent(e)}
+                value = {data.attchFile}
+              >
+                <DragUpload width = '77vw' text = 'Attach Files' />
+              </span>
 
-              <div style = {{display: 'flex', marginLeft: '900px'}}>
-                <Button text = 'Cancel' />
+              <div style = {{display: 'flex', marginRight: '0', marginLeft: 'auto'}}>
+                <Button text = {'Cancel'} cancel />
                 <Button text = 'Submit' />
+                <button>submit</button>
               </div>
-            </div>
+            </form>
             
           </ul>
         </nav>

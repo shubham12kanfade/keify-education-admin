@@ -21,8 +21,10 @@
 .test__icons {
   display: flex;
   font-weight: 400;
-  position: relative;
-  left: 400px;
+  margin-right: 0;
+  margin-left: auto;
+  /* position: relative;
+  left: 400px; */
 }
 
 .test__content {

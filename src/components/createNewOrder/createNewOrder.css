@@ -50,16 +50,3 @@
   display: flex;
   margin-left: 900px;
 }
-
-@media only screen and (max-width: 855px) {
-  .header {
-  }
-  .input {
-  }
-  .input__heading {
-  }
-  .input__sm__div {
-  }
-  .input__sm {
-  }
-}

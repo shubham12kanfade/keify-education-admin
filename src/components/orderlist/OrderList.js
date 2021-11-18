@@ -16,41 +16,40 @@ import OrderComp from './orderComp/OrderComp';
 import { orderData } from '../../data/orderData';
 import Button from '../../smallComponents/button/Button';
 import './OrderList.css';
-
+// import './createNewOrder.css';
+import { IconContext } from 'react-icons';
+import {AiOutlineClose} from 'react-icons/ai';
+import DragUpload from '../../smallComponents/dragUpload/DragUpload';
+import { Editor } from "react-draft-wysiwyg";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Dropdown from '../../smallComponents/dropdown/Dropdown';
+import Input from '../../smallComponents/input/Input';
+import Header from '../../smallComponents/header/Header';
 
 const OrderList = () => {
 
     const [people, setPeople] = useState(orderData);
     const [modelVisible, setModelVisible] = useState(false);
 
-    const handleModalOpen = () => {
-        setModelVisible(!modelVisible);
-    }
-
     return (
         <div className = 'orderlist'>
             <div className = 'orderlist__top'>
-                <div style = {{color: 'black', marginTop: '10px', marginRight: '500px', fontSize : '25px'}}>
-                    <AiOutlineVideoCamera  fontSize = '20px' />
-                    Orders
+                <div className = 'orderlist__top__left'>
+                    <span><AiOutlineVideoCamera  fontSize = '20px' /></span>
+                    <p>Orders</p>
                 </div>
-                <span style = {{margin : '18px'}}><AiOutlineFilter fontSize = '25px' /></span>
-                <input 
-                    type = 'text' 
-                    name = 'orders' 
-                    placeholder = 'Search Orders' 
-                    style = {{
-                        marginTop: '13px',
-                        height: '30px',
-                        width: '200px',
-                        paddingLeft: '10px',
-                        outline: 'none',
-                        boxShadow: '0px 4px 4px -2px rgba(0, 0, 0, 0.24)',
-                    }} 
-                />
-                <span style = {{height: '10px'}}><Button text = 'Export' /></span>
-                {/* <span onClick={handleModalOpen}><Button text = 'Add' /></span> */}
-                <CreateNewOrder />
+                <div className = 'orderlist__top__right'> 
+                    <span><AiOutlineFilter fontSize = '25px' /></span>
+                    <input 
+                        type = 'text' 
+                        name = 'orders' 
+                        placeholder = 'Search Orders' 
+                    />
+                    <div className = 'button'><Button text = 'Export' /></div>
+                    <CreateNewOrder />
+                </div>                
             </div>
             <div className = 'orderlist__content'>
                 <OrderComp  people={people} />

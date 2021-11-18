@@ -13,7 +13,7 @@ import{AiOutlinePlus} from 'react-icons/ai'
 import CreateNewOrder from '../../createNewOrder/CreateNewOrder';
 import Toggle from '../../../smallComponents/toggle/Toggle';
 import './OrderComp.css'
-
+ 
 const OrderComp = ({ people }) => {
 
   return (

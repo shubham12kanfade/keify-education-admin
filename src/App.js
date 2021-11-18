@@ -7,12 +7,13 @@ import Orders from './pages/order/Orders';
 import Test from './pages/test/Test';
 import EditTest from './components/editTest/EditTest';
 import CreateNewVideo from './components/createNewVideo/CreateNewVideo';
-import TestFilter from './components/testFilter/test-filter';
+import Progressbar from './components/testFilter/Progressbar';
 import TestSectionTest from './components/testSection/TestSection';
 // import TestSection from './components/testSection/testsection';
 
 function App(){
   return(
+    <div classname="app">
     <Router>
       <Switch>
         <Route path="/login">
@@ -28,7 +29,7 @@ function App(){
           <Test />  
         </Route>
         <Route path="/filter">
-          <TestFilter />  
+          <Progressbar />  
         </Route>
         <Route path="/testsection">
           <TestSectionTest />
@@ -38,10 +39,10 @@ function App(){
         </Route>
       </Switch>
     </Router>
+    </div>
 
   );
 }
-
 
 export default App;
 

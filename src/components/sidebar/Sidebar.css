@@ -3,6 +3,7 @@
   grid-area: sidebar;
   overflow-y: auto;
   padding: 20px;
+  width: 260px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }

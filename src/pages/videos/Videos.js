@@ -22,7 +22,6 @@ function Videos() {
       <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
       <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar}/>
       {/* <CreateNewVideo />    */}
-      {/* <TestFilter />  */}
       <VideoList />
     </div>
   )
