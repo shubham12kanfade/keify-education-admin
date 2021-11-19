@@ -123,7 +123,7 @@ function CreateNewVideo() {
                     width = {'90%'} 
                     header = {'Name*'}
                   /> */}
-                  <h3 className = "heading">'Enter a name'</h3>
+                  <h3 className = "heading">Enter a name</h3>
                   <input 
                     // className = 'input' 
                     id = "name"
