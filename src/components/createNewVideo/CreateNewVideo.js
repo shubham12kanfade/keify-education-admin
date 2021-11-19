@@ -80,8 +80,8 @@ function CreateNewVideo() {
                 <span 
                 >
                   <DragUpload id = "image"
-                  onChange = {(e) => handleEvent(e)}
-                  value = {data.image}
+                    onChange = {(e) => handleEvent(e)}
+                    value = {data.image}
                     width = '23vw' 
                     text = 'Images' 
                     subtext = '*Select only jpeg, jpg, png, webp files' 
@@ -207,7 +207,21 @@ function CreateNewVideo() {
               <div style = {{display: 'flex', marginRight: '0', marginLeft: 'auto'}}>
                 <Button text = {'Cancel'} cancel />
                 <Button text = 'Submit' />
-                <button>submit</button>
+                <button 
+                  style = {{
+                    backgroundColor: '#4B0082',
+                    border: 'none',
+                    borderRadius: '5px',
+                    color: 'white',
+                    padding: '10px',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    display: 'inline-block',
+                    fontSize: '16px',
+                    margin: '10px',
+                    cursor: 'pointer',
+                  }}  
+                >submit</button>
               </div>
             </form>
             
