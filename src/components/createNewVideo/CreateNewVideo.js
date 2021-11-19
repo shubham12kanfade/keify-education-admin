@@ -1,18 +1,11 @@
 import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import { Link } from 'react-router-dom';
 import './createNewVideo.css';
-import { IconContext } from 'react-icons';
 import {AiOutlineClose} from 'react-icons/ai';
 import DragUpload from '../../smallComponents/dragUpload/DragUpload';
-import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Button from '../../smallComponents/button/Button';
 import Header from '../../smallComponents/header/Header';
-import Input from '../../smallComponents/input/Input';
+// import Input from '../../smallComponents/input/Input';
 import TextEditor from '../../smallComponents/editor/TextEditor';
 import Toggle from '../../smallComponents/toggle/Toggle';
 import Axios from 'axios';
@@ -77,11 +70,11 @@ function CreateNewVideo() {
               onSubmit = {(e) => submit(e)}
             >
               <div style = {{display: 'flex'}}>
-                <span 
+                <span id = "image"
+                  onChange = {(e) => handleEvent(e)}
+                  value = {data.image}
                 >
-                  <DragUpload id = "image"
-                    onChange = {(e) => handleEvent(e)}
-                    value = {data.image}
+                  <DragUpload 
                     width = '23vw' 
                     text = 'Images' 
                     subtext = '*Select only jpeg, jpg, png, webp files' 
@@ -153,9 +146,7 @@ function CreateNewVideo() {
                 </span>
               </div>
 
-              <span id = "shortDesc"
-                onChange = {(e) => handleEvent(e)}
-                value = {data.shortDesc}
+              <span 
               >
                 <h3 style = {{
                   color: '#333',
@@ -168,7 +159,9 @@ function CreateNewVideo() {
                 >
                   Short Description*
                 </h3>
-                <textarea 
+                <textarea id = "shortDesc"
+                onChange = {(e) => handleEvent(e)}
+                value = {data.shortDesc}
                   type = "description" 
                   placeholder = " Enter a short Description" 
                   rows="5" 
@@ -206,7 +199,6 @@ function CreateNewVideo() {
 
               <div style = {{display: 'flex', marginRight: '0', marginLeft: 'auto'}}>
                 <Button text = {'Cancel'} cancel />
-                <Button text = 'Submit' />
                 <button 
                   style = {{
                     backgroundColor: '#4B0082',
