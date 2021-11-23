@@ -1,0 +1,48 @@
+.nav-menu {
+    background-color: white;
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    right: -100%;
+    transition: 850ms;
+  }
+  
+  .nav-menu.active {
+    right: 0;
+    transition: 350ms;
+  }
+  
+  .menu-bars {
+    display: flex;
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+  }
+  
+  .menu-bars {
+    height: 80px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  
+  span {
+    margin-left: 16px;
+  }
+  
+  .mainDiv {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50px;
+    left: 0px;
+    width: 78vw;
+    border-top: 1px solid gray;
+  }
+  

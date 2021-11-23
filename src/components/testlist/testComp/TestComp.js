@@ -18,33 +18,35 @@ import {AiOutlineFilePdf} from 'react-icons/ai';
 import {AiOutlineDelete} from 'react-icons/ai';
 import CreateNewOrder from '../../createNewOrder/CreateNewOrder';
 import Toggle from '../../../smallComponents/toggle/Toggle';
-import './TestComp.css'
+import './TestComp.css';
+import { Link } from 'react-router-dom';
+import EditTest from '../../editTest/EditTest';
 
 const TestComp = ({ test }) => {
 
-  const { _id, name, status, attchFile } = test;
+  const { _id, name, status } = test;
   return (
     <article key={_id}>
       {
         console.log('test is here: ', test)
       } 
-      {/* <div className = 'test__component'>
+      <div className = 'test__component'>
         <div className = 'e-icon-div'>
           <p className = 'e-icon'>E</p>
         </div>
         <div className = 'test__right'>
-          <h3 className = 'test__title'>{title}</h3>
+          <h3 className = 'test__title'>{name}</h3>
           <div className = 'test__content'>
             <AiOutlineClockCircle />
             <span style = {{margin: '0px 10px', color: 'gray'}}>|</span>
             <AiOutlineQuestionCircle />
-            <p>{questions} Questions</p>
+            <p>{status} Questions</p>
           </div>
         </div>
         <div className = 'test__icons'>
           <input 
             type = "button" 
-            value = 'Question'
+            value = '+ Question'
             style = {{
               backgroundColor: 'purple',
               border: '1px solid #4B0082',
@@ -59,13 +61,15 @@ const TestComp = ({ test }) => {
               cursor: 'pointer',
             }}  
           />
-          <span><AiOutlineEdit fontSize="25px" color = 'green' /></span>
+          {/* <span> <AiOutlineEdit fontSize="25px" color = 'green' /></span> */}
+          <span><EditTest/></span>
           <span><Toggle size = {'30px'} color = {'purple'}/></span>      
           <span><BsPeople fontSize="25px" color = 'blue' /></span>
           <span><AiOutlineFilePdf fontSize="25px" color = 'blue' /></span>
           <span><AiOutlineDelete fontSize="25px" color = 'red' /></span>
         </div>
-      </div> */}
+       
+      </div>
     </article>
   )
 }

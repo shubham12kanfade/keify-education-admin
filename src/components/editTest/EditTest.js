@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './EditTest.css';
 import { IconContext } from 'react-icons';
 import {AiOutlineClose} from 'react-icons/ai';
+import {AiOutlineEdit} from 'react-icons/ai';
 import DragUpload from '../../smallComponents/dragUpload/DragUpload';
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -35,7 +36,8 @@ function EditTest() {
     <>
       <div style={{ color: '#fff' }}>
         <div className='bars' onClick={showSidebar}>
-          <Button text = 'edit test' />
+        <AiOutlineEdit fontSize="25px" color = 'green' />
+          {/* <Button text = 'edit test' /> */}
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' >

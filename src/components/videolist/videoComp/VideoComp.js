@@ -18,6 +18,7 @@ import {AiOutlineDelete} from 'react-icons/ai';
 import CreateNewOrder from '../../createNewOrder/CreateNewOrder';
 import Toggle from '../../../smallComponents/toggle/Toggle';
 import './VideoComp.css'
+import EditVideo from '../../editVideo/EditVideo';
 
 const VideoComp = ({ video }) => {
   
@@ -51,7 +52,7 @@ const VideoComp = ({ video }) => {
               </div>
               <div className = 'video__icons'>
                 <span><Toggle size = {'30px'} color = {'purple'}/></span>      
-                <span><AiOutlineEdit fontSize="25px" color = 'green' /></span>      
+                <span><EditVideo/></span>      
                 <span><BsGlobe fontSize="25px" color = 'blue' /></span>      
                 <span><AiOutlineDelete fontSize="25px" color = 'red' /></span>
               </div>
