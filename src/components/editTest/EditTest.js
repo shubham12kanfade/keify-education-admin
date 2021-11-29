@@ -92,7 +92,7 @@ function EditTest() {
                     // selected = {selected} 
                     // setSelected = {setSelected} 
                     // value = {value} 
-                    value = {[]}
+                    value = {["multiple type questions","Essay Exams","Open Book Test","Reading Exams"]}
                     defaultValue = {'Exam Type'}
                     header = {'Exam Type*'}
                     footer = {''}
@@ -104,13 +104,13 @@ function EditTest() {
                     // selected = {selected} 
                     // setSelected = {setSelected} 
                     // value = {value} 
-                    value = {[]}
+                    value = {["English","Hindi","Marathi","Social Science","Mathematics"]}
                     defaultValue = {'Test Type'}
                     header = {'Test Type*'}
                     footer = {''}
                   />
                 </div>
-              </div>
+              </div><br/><br/><br/><br/>
 
               <div style={{display: 'flex'}}>
                 <div style = {{width: '50%'}}>
@@ -118,7 +118,7 @@ function EditTest() {
                     // selected = {selected} 
                     // setSelected = {setSelected} 
                     // value = {value} 
-                    value = {[]}
+                    value = {[" Relations and Functions","Vector Algebra"," Determinants","Integrals","Application of Integrals"]}
                     defaultValue = {'Select Chapters'}
                     header = {'Select Chapters*'}
                     footer = {''}
@@ -132,7 +132,7 @@ function EditTest() {
                   />
                 </span>
               </div>             
-
+                <br/><br/><br/>
               <DragUpload 
                 width =  {'77vw'} 
                 text = {'Image'} 

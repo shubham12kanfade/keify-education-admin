@@ -24,9 +24,9 @@ function CreateNewVideo() {
     shortDesc: '',
     longDesc: '',
     attchFile: [],
-  })
+   })
 
-  const submit = (e) => {
+   const submit = (e) => {
     e.preventDefault();
     Axios
       .post(url, {
@@ -40,9 +40,9 @@ function CreateNewVideo() {
       .then(res => {
         console.log('api post data >>>', res.data);
       })
-  }
+   }
 
-  const handleEvent = (e) => {
+    const handleEvent = (e) => {
     const newData = {...data};
     newData[e.target.id] = e.target.value;
     setData(newData);
@@ -65,6 +65,7 @@ function CreateNewVideo() {
                 <AiOutlineClose style = {{color: '#333'}} onClick={showSidebar} />
               </div>
             </li>
+
             <form 
               className = 'mainDiv'
               onSubmit = {(e) => submit(e)}
@@ -95,7 +96,7 @@ function CreateNewVideo() {
                 <span id = "previewVideo"
                   onChange = {(e) => handleEvent(e)}
                   value = {data.previewVideo}
-                >
+                 >
                   <DragUpload 
                     width = '23vw' 
                     text = 'Video' 
@@ -110,12 +111,7 @@ function CreateNewVideo() {
                   style = {{
                     width: '90%' }}
                 >
-                  {/* <Input 
-                    type = {'name'} 
-                    placeholder = {'Enter a name'} 
-                    width = {'90%'} 
-                    header = {'Name*'}
-                  /> */}
+                 
                   <h3 className = "heading">Enter a name</h3>
                   <input 
                     // className = 'input' 
@@ -187,8 +183,8 @@ function CreateNewVideo() {
                 onChange = {(e) => handleEvent(e)}
                 value = {data.longDesc}
               >
-                <TextEditor heading = {'Long Description*'} />
-              </span>
+                <TextEditor heading = {'Long Description*'}/>
+               </span> 
 
               <span id = "attchFile"
                 onChange = {(e) => handleEvent(e)}
@@ -225,5 +221,3 @@ function CreateNewVideo() {
 }
 
 export default CreateNewVideo;
-
-

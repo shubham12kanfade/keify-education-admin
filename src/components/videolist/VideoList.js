@@ -9,7 +9,6 @@ import './VideoList.css';
 import VideoComp from './videoComp/VideoComp';
 import { useEffect } from 'react';
 
-
 const VideoList = () => {
 
     // const [videos, setVideos] = useState(videoData);
