@@ -47,9 +47,11 @@ function CreateNewTest() {
       })
       .then(res => {
         console.log('api post data >>>', res.data);
+
+
+        
       })
   }
-
   const handleEvent = (e) => {
     const newData = {...data};
     newData[e.target.id] = e.target.value;
