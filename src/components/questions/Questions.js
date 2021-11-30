@@ -32,7 +32,26 @@ function Questions() {
     <>
       <div style={{ color: '#fff' }}>
         <div className='bars' onClick={showSidebar}>
-          <Button text = 'Questions' />
+          {/* <Button text = 'Questions' /> */}
+          <span >
+          <input
+            type = "button" 
+            value = '+ Question'
+            style = {{
+              backgroundColor: 'purple',
+              border: '1px solid #4B0082',
+              borderRadius: '5px',
+              color: 'white',
+              padding: '10px',
+              textAlign: 'center',
+              textDecoration: 'none',
+              display: 'inline-block',
+              fontSize: '16px',
+              margin: '10px',
+              cursor: 'pointer',
+            }}   
+          />
+          </span>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' >
@@ -52,7 +71,8 @@ function Questions() {
               <TextEditor 
                 heading = {'Question*'}
               />
-
+              <br/><br/><br/><br/>
+              
               <div style = {{display: 'flex'}}>
                 <div style = {{width: '25%', marginRight: '40px'}}>
                   <h3 className = "question__type__header">
@@ -165,18 +185,18 @@ function Questions() {
                     // selected = {selected} 
                     // setSelected = {setSelected} 
                     // value = {value} 
-                    value = {[]}
+                    value = {["English","Hindi","Marathi","Social Science","Mathematics"]}
                     defaultValue = {'Select a Subject'}
                     header = {'Select Subject*'}
                     footer = {''}
                   />
                 </div>
-              </div>
+              </div><br/><br/><br/><br/>
 
               <TextEditor 
                 heading = {'Explanation*'}
               />
-
+               <br/><br/>
               <TextEditor 
                 heading = {'Instructions'}
               />

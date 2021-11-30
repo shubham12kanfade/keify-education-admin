@@ -34,6 +34,9 @@ function App(){
         <Route path="/testsection">
           <TestSectionTest />
         </Route>
+        <Route path="/edit">
+          <EditTest/>
+        </Route>
         <Route path='/'>
           <Admin />  
         </Route>

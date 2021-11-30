@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './EditTest.css';
 import { IconContext } from 'react-icons';
 import {AiOutlineClose} from 'react-icons/ai';
+import {AiOutlineEdit} from 'react-icons/ai';
 import DragUpload from '../../smallComponents/dragUpload/DragUpload';
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -35,7 +36,8 @@ function EditTest() {
     <>
       <div style={{ color: '#fff' }}>
         <div className='bars' onClick={showSidebar}>
-          <Button text = 'edit test' />
+        <AiOutlineEdit fontSize="25px" color = 'green' />
+          {/* <Button text = 'edit test' /> */}
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' >
@@ -90,7 +92,7 @@ function EditTest() {
                     // selected = {selected} 
                     // setSelected = {setSelected} 
                     // value = {value} 
-                    value = {[]}
+                    value = {["multiple type questions","Essay Exams","Open Book Test","Reading Exams"]}
                     defaultValue = {'Exam Type'}
                     header = {'Exam Type*'}
                     footer = {''}
@@ -102,13 +104,13 @@ function EditTest() {
                     // selected = {selected} 
                     // setSelected = {setSelected} 
                     // value = {value} 
-                    value = {[]}
+                    value = {["English","Hindi","Marathi","Social Science","Mathematics"]}
                     defaultValue = {'Test Type'}
                     header = {'Test Type*'}
                     footer = {''}
                   />
                 </div>
-              </div>
+              </div><br/><br/><br/><br/>
 
               <div style={{display: 'flex'}}>
                 <div style = {{width: '50%'}}>
@@ -116,7 +118,7 @@ function EditTest() {
                     // selected = {selected} 
                     // setSelected = {setSelected} 
                     // value = {value} 
-                    value = {[]}
+                    value = {[" Relations and Functions","Vector Algebra"," Determinants","Integrals","Application of Integrals"]}
                     defaultValue = {'Select Chapters'}
                     header = {'Select Chapters*'}
                     footer = {''}
@@ -130,7 +132,7 @@ function EditTest() {
                   />
                 </span>
               </div>             
-
+                <br/><br/><br/>
               <DragUpload 
                 width =  {'77vw'} 
                 text = {'Image'} 

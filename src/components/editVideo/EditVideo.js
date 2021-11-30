@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './createNewVideo.css';
+import './EditVideo.css';
 import {AiOutlineClose} from 'react-icons/ai';
 import DragUpload from '../../smallComponents/dragUpload/DragUpload';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -9,8 +9,10 @@ import Header from '../../smallComponents/header/Header';
 import TextEditor from '../../smallComponents/editor/TextEditor';
 import Toggle from '../../smallComponents/toggle/Toggle';
 import Axios from 'axios';
+import {AiOutlineEdit} from 'react-icons/ai';
 
-function CreateNewVideo() {
+
+function EditVideo() {
   const [sidebar, setSidebar] = useState(false);
   const [text, setText] = useState("");
 
@@ -24,9 +26,9 @@ function CreateNewVideo() {
     shortDesc: '',
     longDesc: '',
     attchFile: [],
-   })
+  })
 
-   const submit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
     Axios
       .post(url, {
@@ -40,9 +42,9 @@ function CreateNewVideo() {
       .then(res => {
         console.log('api post data >>>', res.data);
       })
-   }
+  }
 
-    const handleEvent = (e) => {
+  const handleEvent = (e) => {
     const newData = {...data};
     newData[e.target.id] = e.target.value;
     setData(newData);
@@ -54,24 +56,24 @@ function CreateNewVideo() {
       <div style={{ color: '#fff' }}>
         <div className=''>
           <div className='bars' onClick={showSidebar}>
-            <Button text = 'Add' />
+            {/* <Button text = 'Add' /> */}
+            <AiOutlineEdit fontSize="25px" color = 'green' />
           </div>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' >
             <li className='navbar-toggle'>
               <div className='menu-bars'>
-                <Header title = {'Create a New Video'} />
+                <Header title = {'Edit Video'} />
                 <AiOutlineClose style = {{color: '#333'}} onClick={showSidebar} />
               </div>
             </li>
-
             <form 
               className = 'mainDiv'
               onSubmit = {(e) => submit(e)}
             >
               <div style = {{display: 'flex'}}>
-                <span id = "image"
+                {/* <span id = "image"
                   onChange = {(e) => handleEvent(e)}
                   value = {data.image}
                 >
@@ -80,9 +82,9 @@ function CreateNewVideo() {
                     text = 'Images' 
                     subtext = '*Select only jpeg, jpg, png, webp files' 
                   />
-                </span>
+                </span> */}
 
-                <span id = "previewVideo"
+                {/* <span id = "previewVideo"
                   onChange = {(e) => handleEvent(e)}
                   value = {data.previewVideo}
                 >
@@ -91,19 +93,18 @@ function CreateNewVideo() {
                     text = 'Preview Video' 
                     subtext = '*Select only mp4, 3gp, avi, mov, webm, mkv files' 
                   />
-                </span>
+                </span> */}
 
-                <span id = "previewVideo"
+                {/* <span id = "previewVideo"
                   onChange = {(e) => handleEvent(e)}
                   value = {data.previewVideo}
-                 >
+                >
                   <DragUpload 
                     width = '23vw' 
                     text = 'Video' 
                     subtext = '*Select only mp4 files' 
                   />
-                </span>
-
+                </span> */}        
               </div>
 
               <div style = {{display: 'flex'}}>
@@ -111,7 +112,12 @@ function CreateNewVideo() {
                   style = {{
                     width: '90%' }}
                 >
-                 
+                  {/* <Input 
+                    type = {'name'} 
+                    placeholder = {'Enter a name'} 
+                    width = {'90%'} 
+                    header = {'Name*'}
+                  /> */}
                   <h3 className = "heading">Enter a name</h3>
                   <input 
                     // className = 'input' 
@@ -142,8 +148,7 @@ function CreateNewVideo() {
                 </span>
               </div>
 
-              <span 
-              >
+              <span>
                 <h3 style = {{
                   color: '#333',
                   fontSize: '17px',
@@ -179,12 +184,14 @@ function CreateNewVideo() {
                 />
               </span>
 
+              
+
               <span id = "longDesc"
                 onChange = {(e) => handleEvent(e)}
                 value = {data.longDesc}
               >
-                <TextEditor heading = {'Long Description*'}/>
-               </span> 
+                <TextEditor heading = {'Long Description*'} />
+              </span>
 
               <span id = "attchFile"
                 onChange = {(e) => handleEvent(e)}
@@ -220,4 +227,6 @@ function CreateNewVideo() {
   );
 }
 
-export default CreateNewVideo;
+export default EditVideo;
+
+
